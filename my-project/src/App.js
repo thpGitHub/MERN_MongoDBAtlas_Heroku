@@ -36,14 +36,14 @@ const App = function () {
 			});
 	}
 	return (
-		<>
+		<div>
 			<h1>My Project</h1>
-			{users === null ? (
+			{/* {users === null ? (
 				<p>Loading...</p>
 			) : users.length === 0 ? (
 				<p>No user available</p>
 			) : (
-				<>
+				<div>
 					<h2>Available Users</h2>
 					<ol>
 						{users.map((user, index) => (
@@ -52,7 +52,7 @@ const App = function () {
 							</li>
 						))}
 					</ol>
-				</>
+				</div>
 			)}
 
 			<form onSubmit={submitForm}>
@@ -68,7 +68,8 @@ const App = function () {
 				/>
 				<input type="submit" />
 			</form>
-		</>
+		 */}
+		</div>
 	);
 };
 export default App
