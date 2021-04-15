@@ -37,7 +37,16 @@ const App = function () {
 	}
 	return (
 		<div>
-			<h1>My Project</h1>
+			<h1>My Project122s</h1>
+			{ console.log('users === ',users) }
+			{users === null ? (
+				<p>Loading...</p>
+			) : (
+				<p>No user available</p>
+			)
+
+			}
+			
 			{/* {users === null ? (
 				<p>Loading...</p>
 			) : users.length === 0 ? (
@@ -54,7 +63,7 @@ const App = function () {
 					</ol>
 				</div>
 			)}
-
+			*/
 			<form onSubmit={submitForm}>
 				<input
 					onChange={(e) => setUsername(e.target.value)}
@@ -68,7 +77,7 @@ const App = function () {
 				/>
 				<input type="submit" />
 			</form>
-		 */}
+		 }
 		</div>
 	);
 };
