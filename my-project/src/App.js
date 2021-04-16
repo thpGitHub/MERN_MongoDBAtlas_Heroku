@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios';
 
+
 const App = function () {
 	const [users, setUsers] = useState(null);
 
@@ -14,6 +15,8 @@ const App = function () {
 	}, []);
 
 	function submitForm() {
+		console.log('email start function submitForm === ', email);
+		console.log('username start function submitForm === ', username);
 		if (username === "") {
 			alert("Please fill the username field");
 			return;
@@ -22,6 +25,10 @@ const App = function () {
 			alert("Please fill the email field");
 			return;
 		}
+		console.log('email === ', email);
+		console.log('username === ', username);
+		alert('email === ', email);
+		
 		axios
 			.post("/api/users", {
 				username: username,
@@ -39,15 +46,15 @@ const App = function () {
 		<div>
 			<h1>My Project122s</h1>
 			{ console.log('users === ',users) }
-			{users === null ? (
+			{/* {users === null ? (
 				<p>Loading...</p>
 			) : (
 				<p>No user available</p>
 			)
 
-			}
+			} */}
 			
-			{/* {users === null ? (
+			{users === null ? (
 				<p>Loading...</p>
 			) : users.length === 0 ? (
 				<p>No user available</p>
@@ -55,7 +62,7 @@ const App = function () {
 				<div>
 					<h2>Available Users</h2>
 					<ol>
-						{users.map((user, index) => (
+						{users.data.map((user, index) => (
 							<li key={index}>
 								Name: {user.name} - Email: {user.email}
 							</li>
@@ -63,7 +70,7 @@ const App = function () {
 					</ol>
 				</div>
 			)}
-			*/
+			
 			<form onSubmit={submitForm}>
 				<input
 					onChange={(e) => setUsername(e.target.value)}
@@ -77,7 +84,7 @@ const App = function () {
 				/>
 				<input type="submit" />
 			</form>
-		 }
+		 
 		</div>
 	);
 };

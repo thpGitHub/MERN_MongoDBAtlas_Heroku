@@ -11,9 +11,11 @@ router.get('/', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-    const { name, email } = req.body;
+    console.log('jsuis dans le router post');
+    console.log('jsuis dans le router post et req body = ', req.body);
+    const { username, email } = req.body; // Attention le state username ne correspond pas au name de la bdd
     const newUser = new User({
-        name: name, email: email
+        name: username, email: email
     })
     newUser.save()
         .then(() => res.json({
