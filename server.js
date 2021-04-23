@@ -19,9 +19,9 @@ app.use('/api/users', users);
 
 app.use(express.static(path.join(__dirname, 'my-project', 'build')));
 
-// app.get('*', (req, res) => {
-//     res.sendFile(path.join(__dirname, 'my-project', 'build', 'index.html'));
-// })
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'my-project', 'build', 'index.html'));
+})
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
