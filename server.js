@@ -17,7 +17,7 @@ app.use(cors());
 const users = require('./api/users');
 app.use('/api/users', users);
 
-// app.use(express.static(path.join(__dirname, 'my-project', 'build')));
+app.use(express.static(path.join(__dirname, 'my-project', 'build')));
 
 // app.get('*', (req, res) => {
 //     res.sendFile(path.join(__dirname, 'my-project', 'build', 'index.html'));
